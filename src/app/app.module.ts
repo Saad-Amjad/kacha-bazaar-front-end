@@ -8,14 +8,16 @@ import { environment } from 'src/environments/environment';
 import { ItemModule } from './item/item.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-@NgModule({
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+@NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
     FormsModule,
     ItemModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),

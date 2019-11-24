@@ -1,15 +1,21 @@
 <div class="container-fluid">
-  <h2>Items</h2>
+  <span class="d-block p-2 bg-white text-black">Items</span>
   <table class="table table-dark">
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-    </tr>
-    <ng-container *ngFor="let item of items | async">
-      <tr (click)="getDetails(item)">
-        <td>{{ item.data.name }}</td>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items | async; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ item.data.name }}
+        </td>
         <td>{{ item.data.price }}</td>
       </tr>
-    </ng-container>
+    </tbody>
   </table>
 </div>
